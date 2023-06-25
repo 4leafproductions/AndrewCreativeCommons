@@ -1,0 +1,33 @@
+.viewer{
+  margin-top: 30px;
+  width:1000px;
+  border: 1px outset goldenrod;
+  padding:2px;
+  border-radius: 5px;
+  background-color: goldenrod;
+ 
+}
+
+
+@media screen and (max-width: 800px) {
+  .viewer{
+    width:700px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .viewer{
+    width:400px;
+  }
+}
+.header{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(40%, auto));
+  width: var(--max-width);
+  max-width: 100%;
+  vertical-align: baseline;
+}
+.title{
+  margin-top: 10px;
+  color:black;
+  font-weight: 800;
+}

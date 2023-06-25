@@ -16,6 +16,7 @@
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
+  text-shadow: 3px 3px 2px black;
 }
 
 .description a {
@@ -24,7 +25,9 @@
   align-items: center;
   gap: 0.5rem;
 }
-
+.actionsRow{
+  display:inline-flex;
+}
 .description p {
   position: relative;
   margin: 0;
@@ -50,8 +53,9 @@
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
+  border: 1px solid rgba(218,165,32, 0);
   transition: background 200ms, border 200ms;
+  margin-top: 10px;
 }
 
 .card span {
@@ -111,7 +115,7 @@
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    border: 1px solid rgba(218,165,32, 0.35);
   }
 
   .card:hover span {
