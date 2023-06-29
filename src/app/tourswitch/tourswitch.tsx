@@ -1,13 +1,10 @@
 'use client'
-import Image from 'next/image'
 import styles from './tourswitch.module.css'
 import { Switch } from "@nextui-org/react";
 import { useState } from 'react';
+//this component turns the technical tour on and off, as well as displays the initial modal.
 export default function Tourswitch(props: any) {
 
-  // function Modal(){
-  //   return(<div></div>)
-  // }
 
   const [switchClicked, setSwitchClicked] = useState(false);
   const  css={

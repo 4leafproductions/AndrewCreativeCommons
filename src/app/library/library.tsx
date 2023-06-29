@@ -1,10 +1,8 @@
 'use client';
-import Image from 'next/image'
 import { useState } from 'react';
 import { Dropdown } from "@nextui-org/react";
 import styles from './library.module.css'
-import { createTheme, NextUIProvider } from "@nextui-org/react"
-
+//this component houses the "library" - the collection of PDFs available from public/files directory
 export default function Library(props: any) {
 
   const [showBox, setShowBox] = useState(false);

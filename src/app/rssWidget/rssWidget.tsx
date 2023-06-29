@@ -1,23 +1,20 @@
 import { useState } from 'react';
 import styles from './rssWidget.module.css'
-const contentOptions = [{value: 'PDF', label: 'Books'},{value: 'RSS', label: 'Podcasts'}];
 import { getData } from '../rssDas';
 
-
+//this component takes a URL and displays a playable audio for the corresponding podcast - must be the format NPR uses for the feed to properly display as a widget
 export default function RSSWidget(props: any) {
 
-  type enclosure ={url: string};
-  type CustomItem = { pubDate: string, title: string, enclosure: enclosure};
-  const [contentOption, setContentOption] = useState(contentOptions[0]);
+  //all the fields needed to render the widget
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [pubdate, setPubDate] = useState('');
   const [audio, setAudio] = useState('');
   let items: any = null;
-  const [itemsFeed, setItemsFeed] = useState(items);
   const data = getData(props.url).then(results =>{
     let url = results.items[0]?.enclosure?.url;
     let urlDefault = url ? url : '';
+    //format the date to something user-friendly
     let date = new Date(results.items[0].pubDate);
     setPubDate(date.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}));
     setAudio(urlDefault);
@@ -25,6 +22,7 @@ export default function RSSWidget(props: any) {
     setDescription(results.description);
   });
 
+  //create the audio source for this podcast
   function AudioClip(){
     return(
       <audio controls>

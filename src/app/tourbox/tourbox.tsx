@@ -1,8 +1,8 @@
 'use client';
-import Image from 'next/image'
 import styles from './tourbox.module.css'
 import { useState } from 'react';
 
+//this component surrounds a given component with the tour component for displaying explanations of each component
 export default function Tourbox(props: any) {
 
   const [showBox, setShowBox] = useState(false);

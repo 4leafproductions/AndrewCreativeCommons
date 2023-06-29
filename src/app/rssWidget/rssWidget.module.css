@@ -50,3 +50,8 @@
     margin-bottom: 5px;
     color:goldenrod;
 }
+@media (max-width: 415px) {
+    .rssWidget{
+        width: 370px;
+    }
+}

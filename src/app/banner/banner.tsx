@@ -1,12 +1,7 @@
 
 import styles from './banner.module.css'
-import Image from 'next/image';
-import bannerImg from '/public/bookBanner.jpg'
-
+//the site's banner
 export default function Banner(props: any) {
-
-
-  
 
   return (
     <div className={styles.backgroundBanner}>

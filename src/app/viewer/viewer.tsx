@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Library from '../library/library';
 import Tourbox from '../tourbox/tourbox';
 
+//any books added to the public/files folder need to be added here to show up in the dropdown
 const libraryIndex = 
 [{name: 'Frankenstein', title: 'Frankenstein', author: 'Mary Shelly'},
 {name: '1984', title: '1984', author: 'George Orwell'},
@@ -14,8 +15,8 @@ const libraryIndex =
 export default function Viewer(props: any) {
 
   const [activeBook, setActiveBook] = useState(getBookByKey('Frankenstein'));
+  //dynamically builds the src path for each PDF
   function getFile(){
-    //let path = '/files/'+props.file;
     return '/files/'+activeBook?.name +'.pdf';
   }
 
