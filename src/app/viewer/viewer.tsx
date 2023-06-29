@@ -16,23 +16,24 @@ export default function Viewer(props: any) {
   const [activeBook, setActiveBook] = useState(getBookByKey('Frankenstein'));
   function getFile(){
     //let path = '/files/'+props.file;
-    return '/files/'+activeBook.name +'.pdf';
+    return '/files/'+activeBook?.name +'.pdf';
   }
 
   function pickBook(key: any){
     setActiveBook(getBookByKey(key));
   }
-  function getBookByKey(key){
+  function getBookByKey(key: any){
     return libraryIndex.find(({ name }) => name === key);
   }
 
   return (
     <div className={styles.viewer}>
-      <Tourbox tourMode={props.tourMode} tourText="This toolbar and dropdown menu use React's state and props functionality to choose the active book. Books are indexed as objects with a name, title, and author. The dropdown is powered by Next UI -- picking a file name passes it to the Viewer component, which loads the PDF into the iframe.">
+      <Tourbox tourMode={props.tourMode} 
+      tourText="This toolbar and dropdown menu use React's state and props functionality to choose the active book. Books are indexed as objects with a name, title, and author. The dropdown is powered by Next UI -- picking a file name passes it to the Viewer component, which loads the PDF into the iframe.">
         <div className={styles.header}>
             <Library libraryIndex={libraryIndex} pickBook={pickBook}/>
           <span className={styles.title}>{activeBook?.title}</span>
-          <span className={styles.title}>{activeBook?.author}</span>
+          <span className={styles.author}>{activeBook?.author}</span>
         </div>
       </Tourbox>
       <iframe src={getFile()} width="100%" height="900px"></iframe>

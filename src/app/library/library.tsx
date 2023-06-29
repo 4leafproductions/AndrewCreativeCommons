@@ -8,7 +8,7 @@ import { createTheme, NextUIProvider } from "@nextui-org/react"
 export default function Library(props: any) {
 
   const [showBox, setShowBox] = useState(false);
-  const menuItems = props.libraryIndex.map(book =>
+  const menuItems = props.libraryIndex.map((book: any) =>
     <Dropdown.Item key={book.name}>{book.title}</Dropdown.Item>
     );
 
