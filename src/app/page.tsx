@@ -78,7 +78,7 @@ export default function Home() {
         </Tourbox>
       </>}
       {pdfActive && <>
-        <span className={styles.pdfWarning}>Some mobile browsers don't display PDFs well. Consider a podcast instead!</span>
+        <span className={styles.pdfWarning}>Some mobile browsers don&apos;t display PDFs well. Consider a podcast instead!</span>
         <Tourbox tourMode={isTourMode} tourText = "This is the embedded PDF Viewer. The Viewer component accepts a property called file. Passing this property the name of any PDF switches the iframe viewer contents to that file.">
           <Viewer tourMode={isTourMode} file={activeBook}></Viewer>
         </Tourbox>
